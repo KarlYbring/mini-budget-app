@@ -55,16 +55,6 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       });
   }, []);
 
-  // Summering
-  const totalExpense = transactions
-    .filter((t) => t.type === "expense")
-    .reduce((sum, t) => sum + t.amount, 0);
-
-  const totalIncome = transactions
-    .filter((t) => t.type === "income")
-    .reduce((sum, t) => sum + t.amount, 0);
-
-
   useEffect(() => {
     setFilteredTransactions(
       transactions.filter((tx) => {
