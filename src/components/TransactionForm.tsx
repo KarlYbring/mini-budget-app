@@ -6,6 +6,7 @@ import type { Transaction, Category } from "../types"; // Create a types.ts for 
 interface TransactionFormProps {
   transactions: Transaction[];
   fetchTransactions: () => void;
+  isLoggedIn: boolean;
 }
 
 const getCategoryClass = (name: string) =>
@@ -19,6 +20,7 @@ const getCategoryClass = (name: string) =>
 const TransactionForm: React.FC<TransactionFormProps> = ({
   transactions,
   fetchTransactions,
+  
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [date, setDate] = useState(() => {

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import TransactionForm from "./components/TransactionForm";
 import axios from "axios";
 import SummaryBox from "./components/SummaryBox";
 import LogoBox from "./components/LogoBox";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -16,8 +16,8 @@ const TRANSACTIONS_PER_PAGE = 10;
 function App() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [visibleCount, setVisibleCount] = useState(TRANSACTIONS_PER_PAGE);
-  const [filterCategory, setFilterCategory] = useState(""); // "" = visa alla
+  const [visibleCount] = useState(TRANSACTIONS_PER_PAGE);
+  const [filterCategory] = useState(""); // "" = visa alla
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -59,9 +59,6 @@ function App() {
       categorySums[catName] += tx.amount;
     }
   });
-
-  // Totalt saldo (om du vill visa det):
-  const total = transactions.reduce((sum, tx) => sum + tx.amount, 0);
 
   // Antag att filteredTransactions är din lista som ska visas
   const filteredTransactions = transactions.filter((tx) => {
