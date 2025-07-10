@@ -41,4 +41,4 @@ MIT
 
 ---
 
-> Byggd av [Ditt Namn](https://github.com/DITT-ANVÄNDARNAMN)
+> Byggd av [Ditt Namn](https://github.com/KarlYbring)
