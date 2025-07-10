@@ -6,7 +6,6 @@ import type { Transaction, Category } from "../types"; // Create a types.ts for 
 interface TransactionFormProps {
   transactions: Transaction[];
   fetchTransactions: () => void;
-  isLoggedIn: boolean;
 }
 
 const getCategoryClass = (name: string) =>
@@ -20,7 +19,6 @@ const getCategoryClass = (name: string) =>
 const TransactionForm: React.FC<TransactionFormProps> = ({
   transactions,
   fetchTransactions,
-  isLoggedIn,
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [date, setDate] = useState(() => {
@@ -37,7 +35,6 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
   const [filteredTransactions, setFilteredTransactions] = useState<Transaction[]>([]);
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
-  const [amountRange, setAmountRange] = useState<[number, number]>([0, 10000]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const transactionsPerPage = 5;
@@ -94,6 +91,10 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       e.preventDefault();
       if (!category) {
         alert("Välj en kategori!");
+        return;
+      }
+      if (amount === "" || isNaN(Number(amount))) {
+        alert("Ange ett giltigt belopp!");
         return;
       }
       const transaction = {
@@ -174,7 +175,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
   };
 
   // Funktion för att öppna modal
-  const handleTransactionClick = (tx: any) => {
+  const handleTransactionClick = (tx: Transaction) => {
     setSelectedTransaction(tx);
     setShowDeleteModal(true);
   };
