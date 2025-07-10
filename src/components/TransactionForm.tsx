@@ -48,7 +48,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       .get("https://localhost:7233/api/category")
       .then((res) => {
         setCategories(res.data);
-        if (res.data.length > 0) setCategory(res.data[0].id);
+        if (res.data.length > 0) setCategory(String(res.data[0].id));
       })
       .catch((err) => {
         console.error("Kunde inte hämta kategorier:", err);
@@ -64,7 +64,6 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
     .filter((t) => t.type === "income")
     .reduce((sum, t) => sum + t.amount, 0);
 
-  const balance = totalIncome - totalExpense;
 
   useEffect(() => {
     setFilteredTransactions(
@@ -125,7 +124,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
         setAmount("");
         setType("expense");
         setDescription("");
-        setCategory(categories[0]?.id || "");
+        setCategory(categories[0]?.id ? String(categories[0].id) : "");
         fetchTransactions();
       } catch (err) {
         console.error("Kunde inte spara transaktion:", err);
