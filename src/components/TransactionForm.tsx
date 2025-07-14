@@ -47,7 +47,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
   // Hämta kategorier
   useEffect(() => {
     axios
-      .get("https://localhost:7233/api/category")
+      .get(`${import.meta.env.VITE_API_URL}/category`)
       .then((res) => {
         setCategories(res.data);
         if (res.data.length > 0) setCategory(String(res.data[0].id));
@@ -101,7 +101,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       try {
         const token = localStorage.getItem("token");
         await axios.post(
-          "https://localhost:7233/api/transaction",
+          `${import.meta.env.VITE_API_URL}/transaction`,
           transaction,
           {
             headers: {
@@ -134,7 +134,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       try {
         const token = localStorage.getItem("token");
         await axios.delete(
-          `https://localhost:7233/api/transaction/${selectedTransaction.id}`,
+          `${import.meta.env.VITE_API_URL}/transaction/${selectedTransaction.id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

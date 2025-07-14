@@ -15,7 +15,7 @@ export default function Register({ onRegister }: { onRegister: () => void }) {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("https://localhost:7233/api/user/register", form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/user/register`, form);
       onRegister();
       navigate("/login"); // Redirect till login-sidan
     } catch (err: any) {

@@ -15,7 +15,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
     e.preventDefault();
     setError("");
     try {
-      const res = await axios.post("https://localhost:7233/api/user/login", form);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, form);
       localStorage.setItem("token", res.data.token); // Lägg till denna rad!
       onLogin();
       navigate("/"); // Redirect till MiniBudget-sidan efter lyckad inloggning

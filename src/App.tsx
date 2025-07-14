@@ -24,7 +24,7 @@ function App() {
   // Hämta kategorier
   useEffect(() => {
     axios
-      .get("https://localhost:7233/api/category")
+      .get(`${import.meta.env.VITE_API_URL}/category`)
       .then((res) => setCategories(res.data))
       .catch((err) => console.error("Kunde inte hämta kategorier:", err));
   }, []);
@@ -33,7 +33,7 @@ function App() {
   const fetchTransactions = () => {
     const token = localStorage.getItem("token");
     axios
-      .get("https://localhost:7233/api/transaction", {
+      .get(`${import.meta.env.VITE_API_URL}/transaction`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
