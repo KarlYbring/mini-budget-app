@@ -254,7 +254,7 @@ ul {
 .category-color-nöjen { background: #ff8a80; color: #222; padding: 2px 6px; border-radius: 6px; }
 .category-color-hyra { background: #81c784; color: #222; padding: 2px 6px; border-radius: 6px; }
 .category-color-abonnemang { background: #b39ddb; color: #311b92; padding: 2px 6px; border-radius: 6px; }
-.category-color-other { background: #ffd54f; color: #222; padding: 2px 6px; border-radius: 6px; }
+.category-color-annat { background: #ffd54f; color: #222; padding: 2px 6px; border-radius: 6px; }
 /* Lägg till fler efter behov */
 
 /* ====== Ta bort transaktion ====== */

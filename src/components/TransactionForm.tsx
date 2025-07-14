@@ -89,7 +89,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
         return;
       }
       const transaction = {
-        date,
+        date: new Date(date).toISOString(), // <-- Lägg till detta!
         amount: Number(amount),
         type,
         description,
