@@ -13,32 +13,28 @@ En modern, responsiv budgetapp byggd med React, TypeScript och JWT-inloggning.
 
 ## Kom igång
 
-1. **Kloning**
-   ```bash
-   git clone https://github.com/DITT-ANVÄNDARNAMN/mini-budget-app.git
-   cd mini-budget-app/Frontend
-   ```
+Gå till minibudget.netlify.app
 
-2. **Installera beroenden**
-   ```bash
-   npm install
-   ```
+Skapa ett konto eller logga in
 
-3. **Starta utvecklingsserver**
-   ```bash
-   npm run dev
-   ```
+Använd din e-postadress och ett lösenord för att skapa ett konto eller logga in.
 
-4. **Backend**
-   - Se till att backend är igång på rätt port (t.ex. `localhost:5000`).
+Ditt lösenord sparas hashat för ökad säkerhet.
+
+Lägg till och ta bort utgifter
+
+När du är inloggad kan du lägga till, filtrera och ta bort transaktioner direkt i appen.
+
+Observera:
+Om appen inte har använts på ett tag kan det ta upp till 30 sekunder att starta, eftersom backend ligger på en gratis Render-tjänst som kan behöva vakna (s.k. cold start).
 
 ## Exempelbilder
 
-![Transaktionslista](public/MiniBudgetPNG.png)
+![Transaktionslista](public/demo.png)
 
 ## Licens
 MIT
 
 ---
 
-> Byggd av [Ditt Namn](https://github.com/KarlYbring)
+> Byggd av [Karl Ybring](https://github.com/KarlYbring)
