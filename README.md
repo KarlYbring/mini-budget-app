@@ -13,19 +13,14 @@ En modern, responsiv budgetapp byggd med React, TypeScript och JWT-inloggning.
 
 ## Kom igång
 
-Gå till minibudget.netlify.app
+1. Gå till minibudget.netlify.app
 
-Skapa ett konto eller logga in
+2. Skapa ett konto eller logga in med email och lösenord. (Ditt lösenord sparas hashat för ökad säkerhet.)
 
-Använd din e-postadress och ett lösenord för att skapa ett konto eller logga in.
-
-Ditt lösenord sparas hashat för ökad säkerhet.
-
-Lägg till och ta bort utgifter
-
-När du är inloggad kan du lägga till, filtrera och ta bort transaktioner direkt i appen.
+3. När du är inloggad kan du lägga till, filtrera och ta bort transaktioner direkt i appen.
 
 Observera:
+
 Om appen inte har använts på ett tag kan det ta upp till 30 sekunder att starta, eftersom backend ligger på en gratis Render-tjänst som kan behöva vakna (s.k. cold start).
 
 ## Exempelbilder
