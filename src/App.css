@@ -52,6 +52,33 @@ html, body {
   padding: 1rem;
 }
 
+.transaction-form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.transaction-form-row select,
+.transaction-form-row input[type="text"],
+.transaction-form-row button {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-form-row button {
+  height: 43px;
+  min-width: 60px;      /* Behåll minsta bredd */
+  width: auto;          /* Låt bredden anpassas efter innehåll */
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;           /* Ta bort flex: 1 om det finns */
+}
+
 .form-title {
   flex: 1 1 100%;
   font-size: 1.3rem;
@@ -213,12 +240,12 @@ html, body {
 }
 .container {
   max-width: 1100px;
-  margin: 30px auto 0 auto; /* auto på båda sidor centrerar horisontellt */
-  padding-left: 24px;
-  padding-right: 24px;
+  margin: 30px auto 0 auto;
+  padding-left: 8px;    /* Mindre padding vänster */
+  padding-right: 80px;  /* Mer padding höger */
   display: flex;
   flex-direction: column;
-  align-items: center; /* centrera innehållet i containern */
+  align-items: center;
 }
 ul {
   padding: 0;
@@ -231,7 +258,6 @@ ul {
   gap: 0.5rem;
   font-size: 1rem;
   color: #fff;
-  font-weight: 500;
 }
 .transaction-info .description {
   color: #ffffff;
@@ -298,8 +324,8 @@ ul {
 
 .transaction-filter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.2rem 1.2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
   align-items: end;
   background: #0d1117;
   padding: 1.2rem 1.5rem;
@@ -310,6 +336,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
+
 }
 
 .filter-field {
@@ -322,7 +349,7 @@ ul {
   background: #161b22;
   border: 1px solid #30363d;
   color: #eee;
-  padding: 0.6rem 0.75rem;
+  padding: 0.6rem;
   border-radius: 8px;
   font-size: 1rem;
   min-width: 120px;
@@ -363,6 +390,15 @@ ul {
   outline: none;
   transition: border-color 0.2s;
   text-align: center; /* Centrera prisbeloppet */
+}
+
+/* Lägg till eller ändra denna regel */
+.transaction-form-row input[type="number"] {
+  height: 43px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 /* Ta bort spinners (upp/ner-pilar) i nummerfält för alla större webbläsare */
@@ -595,6 +631,20 @@ h2{
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
+}
+
+.transaction-form input[type="number"],
+.transaction-form input[type="date"],
+.transaction-form input[type="text"],
+.transaction-form select {
+  width: 257px;
+  height: 43px;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.transaction-footer {
+  justify-content: center;
 }
 
 

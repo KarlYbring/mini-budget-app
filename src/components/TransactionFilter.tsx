@@ -25,7 +25,6 @@ const TransactionFilter: React.FC<TransactionFilterProps> = ({
         value={search}
         onChange={(e) => onSearchChange(e.target.value)}
         className="filter-input"
-        style={{ maxWidth: 120 }} // Gör sökrutan smalare
       />
     </div>
     <div className="filter-field">
@@ -34,7 +33,6 @@ const TransactionFilter: React.FC<TransactionFilterProps> = ({
         value={dateFrom}
         onChange={(e) => onDateFromChange(e.target.value)}
         className="filter-input"
-        style={{ maxWidth: 140 }}
         placeholder="Från datum"
       />
     </div>
@@ -44,7 +42,6 @@ const TransactionFilter: React.FC<TransactionFilterProps> = ({
         value={dateTo}
         onChange={(e) => onDateToChange(e.target.value)}
         className="filter-input"
-        style={{ maxWidth: 140 }}
         placeholder="Till datum"
       />
     </div>

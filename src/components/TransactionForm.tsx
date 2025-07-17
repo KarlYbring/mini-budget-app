@@ -176,9 +176,9 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
       <div className="transaction-form-header"></div>
       <form onSubmit={handleSubmit} className="transaction-form">
         <h2 className="form-title">Lägg till transaktion</h2>
-
         <input
           type="date"
+          className="form-date-input"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           placeholder="Datum"
@@ -192,21 +192,22 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
           required
           min="0"
         />
-        <input type="hidden" value="expense" />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          {categories.map((cat) => (
-            <option key={cat.id} value={cat.id}>
-              {cat.name}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          placeholder="Beskrivning"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button type="submit">Spara</button>
+        <div className="transaction-form-row">
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            placeholder="Beskrivning"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <button type="submit">Spara</button>
+        </div>
       </form>
 
       {/* Filter */}
