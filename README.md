@@ -26,7 +26,7 @@ Om appen inte har använts på ett tag kan det ta upp till 30 sekunder att start
 ![Transaktionslista](public/demo.png)
 
 ## Licens
-MIT
+
 
 ---
 

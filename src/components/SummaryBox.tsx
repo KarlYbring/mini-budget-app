@@ -24,7 +24,9 @@ const SummaryBox: React.FC<SummaryBoxProps> = ({ summary, categories }) => {
         {categories.map((cat) => (
           <div className="summary-category-row" key={cat}>
             <span className={`category-label category-color-${cat.toLowerCase()}`}>{cat}</span>
-                {summary?.[cat]?.toLocaleString("sv-SE")   ??  0}  kr
+            <span className="summary-amount">
+              {summary?.[cat]?.toLocaleString("sv-SE") ?? 0} kr
+            </span>
           </div>
         ))}
       </div>
