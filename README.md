@@ -2,8 +2,6 @@
 
 En modern, responsiv budgetapp byggd med React, TypeScript och JWT-inloggning.
 
-![MiniBudgetApp Screenshot](public/MiniBudgetPNG.png)
-
 ## Funktioner
 - JWT-inloggning & utloggning (30 minuters session)
 - Lägg till, filtrera och ta bort transaktioner
