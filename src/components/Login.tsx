@@ -39,7 +39,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
       {isLoading && (
         <div className="spinner">
           <div className="spinner-circle"></div>
-          Backend startar, vänta...
+          logging in
         </div>
       )}
       {error && <div style={{ color: "#ff4d4d", marginTop: 8 }}>{error}</div>}
